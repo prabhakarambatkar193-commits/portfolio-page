@@ -1,0 +1,108 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Step 2: Apply Flexbox to distribute menu items horizontally */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* Step 3: Hamburger icon (hidden by default on desktop) */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Step 4: Media queries to toggle visibility on small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1e293b;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    border-top: 1px solid #334155;
+  }
+
+  /* Show menu when hamburger checkbox is checked */
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+}
+
+/* Demo Page Content */
+.demo-content {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.demo-content h1 {
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
